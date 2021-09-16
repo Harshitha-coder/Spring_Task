@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.xworkz.airport.Airport" id="airport">
+		<constructor-arg name="name" value="Kempegowda"></constructor-arg>
+		<constructor-arg name="location" value="Devenahalli"></constructor-arg>
+	</bean>
+	<bean class="java.lang.String" id="string">
+		<constructor-arg name="value" value="Harshitha"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Integer" id="integer">
+		<constructor-arg name="number" value="123"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Double" id="double">
+		<constructor-arg name="value" value="300"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Boolean" id="boolean">
+		<constructor-arg name="value" value="true"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Long" id="long">
+		<constructor-arg name="value" value="12345678"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Short" id="short">
+		<constructor-arg name="value" value="1288"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Byte" id="byte">
+		<constructor-arg name="value" value="77"></constructor-arg>
+	</bean>
+	<bean class="java.lang.Float" id="float">
+		<constructor-arg name="value" value="23"></constructor-arg>
+	</bean>
+	
+	
+	
+	<bean class="com.xworkz.collection.Collection">
+	<property name="listValues">
+	<list>
+	<value>Harshitha</value>
+	<value>Akshay</value>
+	<value>Harsha</value>
+	<value>Sowmya</value>
+	<value>Navya</value>
+	</list>
+	</property>
+
+	<property name="setValues">
+	<set>
+	<value>Chickballapur</value>
+	<value>Banglore</value>
+	<value>Davangere</value>
+	<value>Hassan</value>
+	<value>Gadag</value>
+	<value>Bagalkote</value>
+	<value>Hassan</value>
+	<value>Chickballapur</value>
+	</set>
+	</property>
+	
+	<property name="mapValues">
+	<map>
+	<entry key="1" value="India" />
+	<entry key="2" value="Brazil" />
+	<entry key="3" value="Germany" />
+	<entry key="4" value="USA" />
+	<entry key="5" value="Asia" />
+	</map>
+	</property>
+	</bean>
+	
+	<bean class="com.xworkz.database.Database">
+	<property name="url" value="${url}"></property>
+	<property name="userName" value="${userName}"></property>
+	<property name="password" value="${password}"></property>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PlaceholderConfigurerSupport" id="database">
+	<property name="url" value="database.properties"></property>
+	</bean>
+	
+	
+</beans>
