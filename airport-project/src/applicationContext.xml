@@ -82,8 +82,8 @@
 	<property name="password" value="${password}"></property>
 	</bean>
 	
-	<bean class="org.springframework.beans.factory.config.PlaceholderConfigurerSupport" id="database">
-	<property name="url" value="database.properties"></property>
+	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" id="database">
+	<property name="location" value="database.properties"></property>
 	</bean>
 	
 	
