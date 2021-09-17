@@ -16,4 +16,18 @@
            <constructor-arg name="cloth" value="Nylon"/>
            <constructor-arg name="rubber" value="Crepe"/>
            </bean>
+           
+           <bean class="com.xworkz.fruit.Fruit" id="fruit">
+            <constructor-arg name="name" value="Grapes"/>
+           <constructor-arg name="color" value="White"/>
+           <constructor-arg name="price" value="50"/>
+            <constructor-arg name="taste" value="true"/>
+           <constructor-arg name="vitamin" ref="vitamin"/>      
+           </bean>
+           
+           <bean class="com.xworkz.fruit.Vitamin" id="vitamin">
+           <constructor-arg name="type" value="Vitamin C"/>
+           <constructor-arg name="waterSoluble" value="true"/>
+           <constructor-arg name="fatSoluble" value="false"/>
+           </bean>
 </beans>
