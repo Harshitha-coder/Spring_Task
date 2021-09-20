@@ -11,7 +11,7 @@
            <constructor-arg name="material" ref="material"/>
            </bean>
            
-            <bean class="com.xworkz.footwear.Material" id="material">
+           <bean class="com.xworkz.footwear.Material" id="material">
            <constructor-arg name="plastic" value="Polyvinyl"/>
            <constructor-arg name="cloth" value="Nylon"/>
            <constructor-arg name="rubber" value="Crepe"/>
