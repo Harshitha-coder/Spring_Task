@@ -6,18 +6,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.xworkz.apartment.dao.ApartmentDAO;
 import com.xworkz.apartment.dao.ApartmentDAOImpl;
 import com.xworkz.apartment.entity.ApartmentEntity;
+import com.xworkz.apartment.service.ApartmentService;
 
 public class ApartmentTester {
 
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		ApartmentDAO dao = context.getBean(ApartmentDAO.class);
-		ApartmentEntity entity=new ApartmentEntity();
-		entity.setLocation("Chickballapur");
-		entity.setNoOfFloors(5);
-		entity.setPrice(15000);
+		ApartmentService service = context.getBean(ApartmentService.class);
+		ApartmentEntity entity = new ApartmentEntity();
+		entity.setLocation("Banglore");
+		entity.setNoOfFloors(10);
+		entity.setPrice(13000);
 		entity.setLiftAvailable(true);
-		dao.save(entity);
+		service.validateAndSave(entity);
 	}
 }

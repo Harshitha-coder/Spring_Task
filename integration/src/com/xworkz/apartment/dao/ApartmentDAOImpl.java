@@ -14,8 +14,6 @@ public class ApartmentDAOImpl implements ApartmentDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
-
 	public ApartmentDAOImpl(SessionFactory sessionFactory) {
 		super();
 		this.sessionFactory = sessionFactory;
