@@ -16,8 +16,8 @@ public class ApartmentTester {
 		ApartmentService service = context.getBean(ApartmentService.class);
 		ApartmentEntity entity = new ApartmentEntity();
 		entity.setLocation("Banglore");
-		entity.setNoOfFloors(10);
-		entity.setPrice(13000);
+		entity.setNoOfFloors(13);
+		entity.setPrice(14000);
 		entity.setLiftAvailable(true);
 		service.validateAndSave(entity);
 	}
