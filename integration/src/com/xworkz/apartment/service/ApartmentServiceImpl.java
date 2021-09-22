@@ -14,51 +14,50 @@ public class ApartmentServiceImpl implements ApartmentService {
 
 	@Override
 	public boolean validateAndSave(ApartmentEntity entity) {
-		boolean validateLocation = false;
-		boolean validateNoOfFloors = false;
-		boolean validateLiftAvailable = false;
-		boolean validatePrice = false;
+		boolean flag = false;
+
 		if (entity != null) {
 			System.out.println("entity is not null,can validate data");
 			String location = entity.getLocation();
 			if (location != null && !location.isEmpty()) {
 				System.out.println("location is valid");
-				validateLocation = true;
+				flag = true;
 			} else {
 				System.out.println("location is invalid");
-				validateLocation = false;
+				flag = false;
 			}
 			Integer noOfFloors = entity.getNoOfFloors();
 			if (noOfFloors > 5 && noOfFloors < 15) {
 				System.out.println("noOfFloors is valid");
-				validateNoOfFloors = true;
+				flag = true;
 			} else {
 				System.out.println("noOfFloors is invalid");
-				validateNoOfFloors = false;
+				flag = false;
 			}
 			Boolean liftAvailable = entity.isLiftAvailable();
 			if (liftAvailable != null) {
 				System.out.println(" liftAvailable is valid");
-				validateLiftAvailable = true;
+				flag = true;
 			} else {
 				System.out.println(" liftAvailable is invalid");
-				validateLiftAvailable = false;
+				flag = false;
 			}
 			Double price = entity.getPrice();
 			if (price > 5000 && price < 15000) {
 				System.out.println("price is valid");
-				validatePrice = true;
+				flag = true;
 			} else {
 				System.out.println("price is invalid");
-				validatePrice = false;
+				flag = false;
 			}
-			if (validateLocation && validateNoOfFloors && validatePrice && validateLiftAvailable) {
-				this.apartmentDAO.save(entity);
-				System.out.println("data is valid,returning success");
-				return true;
-			}
+
+			this.apartmentDAO.save(entity);
+			System.out.println("data is valid,returning success");
+			flag = true;
+			return flag;
+
 		}
 
-		return false;
+		return flag;
 	}
 }
